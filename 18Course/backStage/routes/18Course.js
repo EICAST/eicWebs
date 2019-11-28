@@ -169,7 +169,7 @@ router.post('/adminLogin', urlencodedParser, function (req, res, next) {
 		password: req.body.password
     }
     
-    if(AccountData.uid == "eicweb" && AccountData.password == "eicweb123456"){
+    if(AccountData.uid == "xxxxxx" && AccountData.password == "xxxxxx"){
         res.status(200).json({ "code": "1" ,"msg": "登陆成功"})
     }
     else{
@@ -205,7 +205,7 @@ router.get('/getChoice', urlencodedParser, function (req, res, next) {
 router.get('/getAllData', urlencodedParser, function (req, res, next) {
 	let params = req.query;
 	let accountCollection = informationDB.getCollection("18Course","ACCOUNT");
-	if(params.uid == "eicweb" && params.password == "eicweb123456"){
+	if(params.uid == "xxxxxx" && params.password == "xxxxxx"){
 		accountCollection.find().sort({"score": -1}).toArray(function (err, allData) {
 			res.status(200).json({
 				code: 1,
